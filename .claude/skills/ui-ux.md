@@ -1,11 +1,17 @@
-# Skill: UI/UX & Angular Styling
+# Skill: UI/UX, Component Design & Navigation
 
-## Components & Styling
-- **Framework:** Tailwind CSS integrated with Angular SCSS.
-- **Icons:** Lucide-react or Angular Material Icons.
-- **Themes:** Light/Dark mode via CSS variables and Renderer2.
+## Look & Feel (Styling)
+- **Angular Material:** Foundation for accessible components.
+- **Tailwind CSS:** Layout, spacing, and custom branding.
+- **Themes:** Centralized `theme.scss` using Material Sass mixins and Tailwind dark mode.
 
-## Navigation & State
-- **Routing:** Functional guards (`canActivate`) and resolvers.
-- **i18n:** `@angular/localize` for translation.
-- **States:** Define explicit Skeleton loaders and Error states per feature module.
+## Navigation & Routing
+- **Structure:** Centralized `app.routes.ts`.
+- **Lazy Loading:** All routes must use `loadComponent`.
+- **Guards:** Use functional `CanActivateFn` guards.
+- **Resolvers:** Use `ResolveFn` to pre-fetch data.
+
+## State Feedback
+- **Loading:** Interceptor-based loading state with `MatProgressBar`.
+- **Error:** `MatSnackBar` for non-blocking errors.
+- **i18n:** `@angular-localize` for static text.

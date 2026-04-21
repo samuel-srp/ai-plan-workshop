@@ -1,18 +1,21 @@
-# Skill: Angular 20+ Architecture
+# Skill: Architecture, Naming, & Quality Standards
 
-## Tech Stack
-- **Framework:** Angular 20+ (Standalone focus).
-- **State Management:** Angular Signals & RxJS.
-- **CLI:** `angular-cli` for all generation tasks.
+## Tech Stack Integration
+- **Framework:** Angular 20+ focusing on **Signals** for reactivity.
+- **UI:** Angular Material for complex logic; Tailwind CSS for layouts and fine-grained UI.
 
 ## Naming Conventions
-- **Components:** `name.component.ts` (PascalCase class).
-- **Services:** `name.service.ts`.
-- **Directives/Pipes:** `name.directive.ts`, `name.pipe.ts`.
-- **Routes:** Centralized `app.routes.ts` with lazy-loading.
+- **Files:** `feature.type.ts` (kebab-case).
+- **Variables:** camelCase; PascalCase for classes.
+- **Observables:** Suffix with `$`.
+- **Signals:** Descriptive names (e.g., `userProfile`).
 
-## Code Quality
-- **Signals:** Use Signals for UI state to optimize change detection (OnPush).
-- **Control Flow:** Use modern `@if`, `@for`, and `@switch` syntax.
-- **Dependency Injection:** Use the `inject()` function over constructor injection.
-- **Error Handling:** Global ErrorHandler implementation for telemetry.
+## Code Quality & Patterns
+- **Signals:** Use `signal`, `computed`, and `effect`. Avoid manual change detection.
+- **Dependency Injection:** Use `inject()` function at the class field level.
+- **Control Flow:** Use modern `@if`, `@for`, `@switch` syntax.
+- **Types:** Strict null checks are non-negotiable.
+
+## Error Handling & Comments
+- **Global Handler:** Implement `GlobalErrorHandler`.
+- **Comments:** JSDoc for complex logic. Use `TODO:` and `FIXME:` tags with descriptions.

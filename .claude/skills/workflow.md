@@ -1,13 +1,19 @@
-# Skill: Angular Workflow
+# Skill: Autonomous Workflow & Decision Framework
 
-## Autonomous Development Loop
-- Plan -> `ng generate` -> Logic -> Test -> Commit.
+## 🔄 The Development & Validation Loop
+1. **Plan:** Identify scope and CLI commands.
+2. **Execute:**
+   - Run `ng generate`.
+   - Implement logic using `inject()` and Signals.
+3. **Internal Review & Cleanup:**
+   - **Check for Comments:** Resolve `// TODO`, `// FIXME` or debug logs immediately.
+   - **Validation:** Execute `ng lint` and relevant `.spec.ts`.
+4. **Commit:**
+   - **Timing:** ONLY commit once code is functional, linted, and tests pass.
+   - **Standard:** Conventional Commits (`feat(scope): description`).
+5. **Final Integration:** Build check for global impacts.
 
 ## Decision Framework
-- Follow Angular MCP for architectural alignment.
-- Prioritize "Standalone" components over NgModules.
-- Use `Signals` for local state; `RxJS` for data streams.
-
-## Commit Standards
-- Conventional Commits: `feat(scope): description`.
-- Automated PR checks for bundle size regressions.
+- **Architecture:** Follow Angular Style Guide/MCP.
+- **Signals vs RxJS:** Signals for state; RxJS for streams/events.
+- **UI:** Material for complexity; Tailwind for aesthetics.

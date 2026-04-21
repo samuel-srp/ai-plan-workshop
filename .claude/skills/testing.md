@@ -1,15 +1,16 @@
-# Skill: Angular Testing Standards
+# Skill: Testing Standards & Validation Patterns
 
 ## TDD Workflow
-1. Write failing test spec (`.spec.ts`).
-2. Write logic using `inject()` and Signals.
-3. Refactor.
+1. **Red:** Create a `.spec.ts` describing expected behavior.
+2. **Green:** Implement logic using `inject()` and Signals.
+3. **Refactor:** Clean up while keeping tests passing.
 
 ## Test Hierarchy
-1. **Unit Tests:** Business logic, Pipes, and pure Services (Vitest).
-2. **Component Tests:** Harnesses for UI interaction.
-3. **E2E Tests:** Playwright for critical user journeys.
+- **Unit Tests (Vitest):** Fast, isolated tests for pure logic.
+- **Integration Tests:** Testing components with templates using `ComponentFixture`.
+- **E2E Tests (Playwright):** Testing critical user flows.
 
-## Validation Patterns
-- Use **Angular Component Harnesses** for stable DOM testing.
-- Mock external dependencies using `provideMockStore` or custom providers.
+## Validation & Mocking
+- **Component Harnesses:** Use Angular Material `TestHarness`.
+- **Mocking:** Use `provideHttpClientTesting`.
+- **Zod:** Validate incoming JSON data before it reaches the state.
