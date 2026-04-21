@@ -14,11 +14,11 @@
 4. **Dev Server:** `ng serve` or `pnpm start`.
 
 ## Scaffolding Rules (CLI First)
-Never create files manually. Always use the CLI to ensure metadata, spec files, and styles are correctly linked:
-- **Component:** `ng g c features/feature-name/components/name --display-block`
-- **Service:** `ng g s core/services/name`
-- **Directive:** `ng g d shared/directives/name`
-- **Pipe:** `ng g p shared/pipes/name`
+Never create files manually. Always use the CLI:
+- **Component:** `ng g c path/to/name --display-block`
+- **Service:** `ng g s path/to/name`
+- **Directive:** `ng g d path/to/name`
+- **Pipe:** `ng g p path/to/name`
 
 ## Linters & Formatters
 - **ESLint:** Use `@angular-eslint`. Enforce template-specific rules like `template/no-any` and `template/accessibility-label-for`.
