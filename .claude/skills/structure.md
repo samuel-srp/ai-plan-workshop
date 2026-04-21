@@ -1,18 +1,22 @@
-# Skill: Angular 20+ Architecture
+# Skill: Architecture, Naming, & Quality Standards
 
-## Tech Stack
-- **Framework:** Angular 20+ (Standalone focus).
-- **State Management:** Angular Signals & RxJS.
-- **CLI:** `angular-cli` for all generation tasks.
+## Tech Stack Integration
+- **Framework:** Angular 20+ focusing on **Signals** for reactivity.
+- **UI:** Hybrid approach—Angular Material for complex components (Tables, Dialogs, Datepickers) and Tailwind CSS for layouts and fine-grained UI adjustments.
 
 ## Naming Conventions
-- **Components:** `name.component.ts` (PascalCase class).
-- **Services:** `name.service.ts`.
-- **Directives/Pipes:** `name.directive.ts`, `name.pipe.ts`.
-- **Routes:** Centralized `app.routes.ts` with lazy-loading.
+- **Files:** Follow `feature.type.ts` (e.g., `user-profile.component.ts`, `auth.service.ts`).
+- **Variables:** camelCase for instances; PascalCase for classes/types.
+- **Observables:** Suffix with `$` (e.g., `userList$`).
+- **Signals:** No specific suffix, but prefer descriptive names (e.g., `currentUser`).
 
-## Code Quality
-- **Signals:** Use Signals for UI state to optimize change detection (OnPush).
-- **Control Flow:** Use modern `@if`, `@for`, and `@switch` syntax.
-- **Dependency Injection:** Use the `inject()` function over constructor injection.
-- **Error Handling:** Global ErrorHandler implementation for telemetry.
+## Code Quality & Patterns
+- **Signals:** Use `signal`, `computed`, and `effect` for local state. Avoid `ChangeDetectorRef.detectChanges()`.
+- **Dependency Injection:** Exclusively use the `inject()` function at the class field level for better composability and type safety.
+- **Control Flow:** Use the `@if`, `@for`, `@switch` block syntax.
+- **Types:** Interfaces over Types for public APIs. Strict null checks are non-negotiable.
+
+## Error Handling & Comments
+- **Global Handler:** Implement a `GlobalErrorHandler` class extending Angular's base.
+- **Services:** Use `catchError` in RxJS streams to handle API failures gracefully.
+- **Comments:** Use JSDoc for complex business logic. Use `TODO:` and `FIXME:` tags with descriptions to track technical debt.
