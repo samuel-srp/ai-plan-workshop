@@ -1,17 +1,13 @@
-# Skill: Workflow & Git
+# Skill: Angular Workflow
 
 ## Autonomous Development Loop
-- Plan -> Execute -> Test -> Commit.
+- Plan -> `ng generate` -> Logic -> Test -> Commit.
 
 ## Decision Framework
-1. Identify the problem.
-2. Evaluate "Build vs. Buy."
-3. Document architectural decisions in an ADR (Architecture Decision Record).
+- Follow Angular MCP for architectural alignment.
+- Prioritize "Standalone" components over NgModules.
+- Use `Signals` for local state; `RxJS` for data streams.
 
 ## Commit Standards
-- **Format:** Conventional Commits (`feat:`, `fix:`, `docs:`, `chore:`).
-- **Example:** `feat(auth): implement Google OAuth provider`
-
-## PR Creation
-- Every PR must include a description of changes and a link to the relevant issue.
-- PRs must pass all CI checks (lint, test, build) before merging.
+- Conventional Commits: `feat(scope): description`.
+- Automated PR checks for bundle size regressions.

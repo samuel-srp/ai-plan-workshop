@@ -1,12 +1,18 @@
-# Skill: Architecture & Quality
+# Skill: Angular 20+ Architecture
+
+## Tech Stack
+- **Framework:** Angular 20+ (Standalone focus).
+- **State Management:** Angular Signals & RxJS.
+- **CLI:** `angular-cli` for all generation tasks.
 
 ## Naming Conventions
-- **Files:** PascalCase for Components, kebab-case for utilities.
-- **Variables:** camelCase.
-- **Types/Interfaces:** PascalCase (prefixed with 'T' or 'I' only if specified).
+- **Components:** `name.component.ts` (PascalCase class).
+- **Services:** `name.service.ts`.
+- **Directives/Pipes:** `name.directive.ts`, `name.pipe.ts`.
+- **Routes:** Centralized `app.routes.ts` with lazy-loading.
 
 ## Code Quality
-- **Principles:** DRY (Don't Repeat Yourself), KISS (Keep It Simple, Stupid).
-- **Types:** Strict mode enabled. Avoid `any` at all costs; use `unknown` if necessary.
-- **Error Handling:** Use custom Error classes and Try/Catch blocks at the boundary layers.
-- **Comments:** Use JSDoc for complex logic; code should be self-documenting otherwise.
+- **Signals:** Use Signals for UI state to optimize change detection (OnPush).
+- **Control Flow:** Use modern `@if`, `@for`, and `@switch` syntax.
+- **Dependency Injection:** Use the `inject()` function over constructor injection.
+- **Error Handling:** Global ErrorHandler implementation for telemetry.
